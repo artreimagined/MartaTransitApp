@@ -24,22 +24,24 @@ public class TransitController {
         return "index";
     }
 
-//    @PostMapping("/buses")
-//    public String getNearbyBuses(BusRequest request, Model model) {
-//        List<Bus> buses = apiService.getNearbyBuses(request);
-//        model.addAttribute("buses", buses);
-//        model.addAttribute("request", request);
-//        return "index";
-//    }
-
     @PostMapping("/buses")
     public String getNearbyBuses(BusRequest request, Model model) {
         List<Bus> buses = apiService.getNearbyBuses(request);
-        Location userLocation = apiService.getCoordinates(request.address + " " + request.city);
-        model.addAttribute("location", userLocation);
         model.addAttribute("buses", buses);
         model.addAttribute("request", request);
         return "index";
     }
+
+//    @PostMapping("/buses")
+//    public String getNearbyBuses(BusRequest request, Model model) {
+//        List<Bus> buses = apiService.getNearbyBuses(request);
+////        Location userLocation = apiService.getCoordinates(request.address + " " + request.city);
+////        model.addAttribute("location", userLocation);
+//        model.addAttribute("buses", buses);
+//        model.addAttribute("request", request);
+//        //new
+////        model.addAttribute(request.address);
+//        return "index";
+//    }
 
 }

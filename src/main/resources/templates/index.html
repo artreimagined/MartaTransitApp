@@ -42,26 +42,22 @@
                 <td th:text="${bus.distance}"></td>
             </tr>
         </table>
-    </div>
-    <!--NEW-->
-    <div class="col">
-        <div id="map"></div>
+<!--        <div id="map"></div>-->
     </div>
     <div class="text-center" th:if="${buses != null and buses.size() == 0}">
         <h3>Sorry, there are no nearby buses.</h3>
     </div>
 </div>
-
-<!--<div id="map"></div>-->
+<br>
+<div class="col" style="height: 100%; width: 100%;">
+    <div id="map"></div>
+</div>
 
 <div th:if="${buses != null and buses.size() > 0}">
     <script th:inline="javascript">
             /*<![CDATA[*/
             var busLocations = /*[[${buses}]]*/;
-            var coords = {
-                lat: parseFloat(/*[[${location.lat}]]*/),
-                lng: parseFloat(/*[[${location.lng}]]*/)
-            };
+<!--
             /*]]>*/
             </script>
     <script th:inline="javascript" src="/custom.js"></script>
