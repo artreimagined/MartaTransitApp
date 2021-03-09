@@ -18,7 +18,11 @@ public class TransitController {
     @Autowired
     private TransitService apiService;
 
-    @GetMapping("/buses")
+    public TransitController(TransitService apiService) {
+        this.apiService = apiService;
+    }
+
+    @GetMapping("/")
     public String getBusesPage(Model model){
         model.addAttribute("request", new BusRequest());
         return "index";
@@ -31,17 +35,5 @@ public class TransitController {
         model.addAttribute("request", request);
         return "index";
     }
-
-//    @PostMapping("/buses")
-//    public String getNearbyBuses(BusRequest request, Model model) {
-//        List<Bus> buses = apiService.getNearbyBuses(request);
-////        Location userLocation = apiService.getCoordinates(request.address + " " + request.city);
-////        model.addAttribute("location", userLocation);
-//        model.addAttribute("buses", buses);
-//        model.addAttribute("request", request);
-//        //new
-////        model.addAttribute(request.address);
-//        return "index";
-//    }
 
 }
