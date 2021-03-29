@@ -5,4 +5,25 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
+    background-color: #e6cd93;
+}
+
+.container {
+    margin-top: 15px;
+}
+
+.span6 {
+    background-color: #fff3d6;
+    border-radius: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.btn-block {
+    background-color: #d9cb97;
+    color: #544039;
+}
+
+.row {
+    background-color: #d997b3;
 }

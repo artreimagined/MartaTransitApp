@@ -21,14 +21,14 @@
                     <input type="text" th:field="*{city}" placeholder="City" class="form-control"/>
                 </div>
                 <div class="form-group">
-                    <button class="btn btn-md btn-primary btn-block" name="Submit" value="Submit" type="Submit">Find</button>
+                    <button class="btn-block" name="Submit" value="Submit" type="Submit">Find</button>
                 </div>
             </form>
             <br/>
         </div>
     </div>
     <div class="row" th:if="${buses != null and buses.size() > 0}">
-        <table class="table table-striped">
+        <table class="table table-striped" style="border-color: black;">
             <tr>
                 <th>Route #</th>
                 <th>Bus #</th>

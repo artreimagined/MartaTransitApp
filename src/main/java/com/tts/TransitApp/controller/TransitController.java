@@ -22,8 +22,8 @@ public class TransitController {
         this.apiService = apiService;
     }
 
-    @GetMapping("/")
-    public String getBusesPage(Model model){
+    @GetMapping("/buses")
+    public String getBusesPage(Model model) {
         model.addAttribute("request", new BusRequest());
         return "index";
     }
